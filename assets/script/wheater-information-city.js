@@ -51,4 +51,6 @@ function attWeatherHTML(response){
     document.querySelector(".temperature").innerHTML = `
     ${(parseFloat(response.data.main.temp) - parseFloat(273,15)).toFixed(0)}º
     `;
+    console.log(response.data);
+    document.querySelector(".imageicon").src = `http://openweathermap.org/img/wn/${(response.data.weather[0].icon)}@2x.png`
 }
