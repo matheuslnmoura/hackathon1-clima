@@ -6,6 +6,10 @@ html {
     box-sizing: border-box;
 }
 
+body {
+    overflow: hidden;
+}
+
 main {
     width: 100vw;
     height: 100vh;
@@ -15,7 +19,6 @@ main {
     background-size: cover;
     display: flex;
     
-    background-color: red;
 }
 
 .bg-backdrop {
@@ -66,11 +69,11 @@ aside {
     right: 0;
     z-index: 2;
     display:flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-start;
 
 
-    background: rgba(17, 17, 20, 0.733);
+    background: rgba(17, 17, 20, 0.664);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(6.9px);
@@ -78,18 +81,84 @@ aside {
 }
 
 aside .container {
-    width: 80%;
-    height: 80%;
-    color:#fff
+    width: 95%;
+    color:#fff;
+    display: flex;
+    flex-direction: column;
 }
 
-aside .container input {
-    width: 80%;
+
+
+aside .container .search-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+aside .container .search-area input {
+    width: 70%;
+    height: 40px;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid #fff;
     padding: 10px;
+    padding-left: 0px;
     outline: none;
     color: #fafafa;
+    
 }
 
+aside .container .search-area input::-webkit-input-placeholder { /* Edge */
+    color: #ccc;
+    font-weight: 300;
+  }
+  
+aside .container .search-area input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #ccc;
+    font-weight: 300;
+  }
+  
+aside .container .search-area input::placeholder {
+    color: #ccc;
+    font-weight: 300;
+  }
+
+.search-button {
+width: 100px;
+height: 100px;
+position: relative;
+top: -20%;
+right: 0;
+background-color: orange;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.search-icon {
+    color: #000;
+    font-size: 36px;
+}
+
+.general-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 60px;
+}
+
+.container-item {
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.general-container h3 {
+    color: #fff;
+}
+
+.weather-infos {
+    display: flex;
+    justify-content: space-between;
+}

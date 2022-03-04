@@ -27,12 +27,55 @@
 
         <aside>
             <div class="container">
-                <input type="text" name="location" id="" placeholder="Another location">
+                <div class="search-area">
+                    <input type="text" name="location" id="" placeholder="Another location">
+                    <div class="search-button">
+                        <ion-icon name="search-outline" class="search-icon"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="general-container other-cities">
+                    <span class="container-item location-name">Birminghan</span>
+                    <span class="container-item location-name">Rio de Janeiro</span>
+                    <span class="container-item location-name">São Paulo</span>
+                    <span class="container-item location-name">Curitiba</span>
+                </div>
+
+                <div class="general-container other-cities">
+                    <span class="container-item"><h3>Weather Info</h3></span>
+                    <div class="weather-infos">
+                        <span class="container-item">Feels Like</span>
+                        <span class="container-value">6ºC</span>
+                    </div>
+
+                    <div class="weather-infos">
+                        <span class="container-item">Min</span>
+                        <span class="container-value">5ºC</span>
+                    </div>
+
+                    <div class="weather-infos">
+                        <span class="container-item">Max</span>
+                        <span class="container-value">8ºC</span>
+                    </div>
+
+                    <div class="weather-infos">
+                        <span class="container-item">Wind</span>
+                        <span class="container-value">13 km/h</span>
+                    </div>
+
+                    <div class="weather-infos">
+                        <span class="container-item">Humidity</span>
+                        <span class="container-value">15%</span>
+                    </div>
+
+                </div>
             </div>
         </aside>
     </main>
 
-  
+ 
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="assets/script/wheater-information-city.js"></script>
 <script src="assets/script/script.js"></script>
