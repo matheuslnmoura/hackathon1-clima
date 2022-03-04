@@ -4,9 +4,7 @@ function searchCity(){
     let city = document.querySelector(".location-search").value; 
     getWeatherByCity(city);
     document.querySelector(".city").innerHTML = city;
-    document.querySelector(".temperature").innerHTML = `
-    ${(parseFloat(response.data.main.temp) - parseFloat(273,15)).toFixed(2)}º
-    `;
+    
 }
 
 
@@ -49,4 +47,8 @@ function attWeatherHTML(response){
         <span class="container-value">${response.data.main.humidity}%</span>
     </div>
     `   
+
+    document.querySelector(".temperature").innerHTML = `
+    ${(parseFloat(response.data.main.temp) - parseFloat(273,15)).toFixed(0)}º
+    `;
 }
