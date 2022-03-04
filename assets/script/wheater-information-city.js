@@ -7,6 +7,28 @@ function searchCity(){
     
 }
 
+let latitude
+let longitude
+
+const getLocation = () => {
+    if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else{
+        alert("O seu navegador não suporta Geolocalização.");
+    }
+}
+
+const showPosition = (position) =>{
+    latitude= position.coords.latitude 
+    longitude = position.coords.longitude;
+    getWeatherByNavigatorLocation()
+}
+getLocation()
+
+
+const getWeatherByNavigatorLocation = () =>{
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${APIKEY}`).then(attWeatherHTML)
+}
 
 function getWeatherByCity(cityName){
     let promisse = axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKEY}`);
@@ -15,7 +37,7 @@ function getWeatherByCity(cityName){
         console.log(erro.response.status);
         alert("Não foi possível encontrar a cidade");
     });
-}
+} 
 
 function attWeatherHTML(response){
     let infoHTML = document.querySelector(".general-container");
