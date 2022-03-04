@@ -20,7 +20,7 @@ function getWeatherByCity(cityName){
 }
 
 function attWeatherHTML(response){
-    let infoHTML = document.querySelector(".other-cities");
+    let infoHTML = document.querySelector(".general-container");
     infoHTML.innerHTML = "";
     infoHTML.innerHTML =`
     <span class="container-item"><h3>Weather Info</h3></span>
