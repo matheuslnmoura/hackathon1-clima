@@ -3,6 +3,10 @@ const APIKEY = 'a6c606a3da0d5f480da526e7352ab847';
 function searchCity(){
     let city = document.querySelector(".location-search").value; 
     getWeatherByCity(city);
+    document.querySelector(".city").innerHTML = city;
+    document.querySelector(".temperature").innerHTML = `
+    ${(parseFloat(response.data.main.temp) - parseFloat(273,15)).toFixed(2)}º
+    `;
 }
 
 
@@ -16,15 +20,33 @@ function getWeatherByCity(cityName){
 }
 
 function attWeatherHTML(response){
-    let infoHTML = document.querySelector("body");
-    infoHTML.innerHTML +=`
-    <p>Temperature = ${(parseFloat(response.data.main.temp) - parseFloat(273,15)).toFixed(2)}°</p>
-    <p>Feels like = ${(parseFloat(response.data.main.feels_like) - parseFloat(273,15)).toFixed(2)}°</p>
-    <p>Temp min = ${(parseFloat(response.data.main.temp_min) - parseFloat(273,15)).toFixed(2)}°</p>
-    <p>Temp max = ${(parseFloat(response.data.main.temp_max) - parseFloat(273,15)).toFixed(2)}°</p>
-    <p>${response.data.weather[0].main} = ${response.data.weather[0].description}   ${response.data.clouds.all}% </p>
-    <p>Wind = ${response.data.wind.speed} km/h </p>
-    <p>Humidity = ${response.data.main.humidity}%</p>
-    `
-    console.log(response.data);
+    let infoHTML = document.querySelector(".other-cities");
+    infoHTML.innerHTML = "";
+    infoHTML.innerHTML =`
+    <span class="container-item"><h3>Weather Info</h3></span>
+    <div class="weather-infos">
+        <span class="container-item">Feels Like</span>
+        <span class="container-value">${(parseFloat(response.data.main.feels_like) - parseFloat(273,15)).toFixed(2)}ºC</span>
+    </div>
+
+    <div class="weather-infos">
+        <span class="container-item">Min</span>
+        <span class="container-value">${(parseFloat(response.data.main.temp_min) - parseFloat(273,15)).toFixed(2)}ºC</span>
+    </div>
+
+    <div class="weather-infos">
+        <span class="container-item">Max</span>
+        <span class="container-value">${(parseFloat(response.data.main.temp_max) - parseFloat(273,15)).toFixed(2)}ºC</span>
+    </div>
+
+    <div class="weather-infos">
+        <span class="container-item">Wind</span>
+        <span class="container-value">${response.data.wind.speed} km/h</span>
+    </div>
+
+    <div class="weather-infos">
+        <span class="container-item">Humidity</span>
+        <span class="container-value">${response.data.main.humidity}%</span>
+    </div>
+    `   
 }
