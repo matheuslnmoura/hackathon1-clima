@@ -5,6 +5,7 @@ function searchCity(){
     getWeatherByCity(city);
 }
 
+
 function getWeatherByCity(cityName){
     let promisse = axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKEY}`);
     promisse.then(attWeatherHTML)
