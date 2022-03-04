@@ -1,0 +1,84 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url('../media/Warm-sky-clouds-sun-sunset_2560x1600.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    
+    background-color: red;
+}
+
+.bg-backdrop {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+    background-color: #00000041;
+}
+
+.weather-info {
+    position: absolute;
+    bottom: 18%;
+    left: 11%;
+    display: flex;
+    align-items: center;
+    color:#fafafa;
+    z-index: 2;
+}
+
+.temperature, 
+.location-time-container,
+.city,
+.time-date {
+    margin-right: 10px;
+}
+
+
+.temperature {
+    font-size: 104px;
+    font-weight: 400;
+}
+
+.location-time-container {
+    display: flex;
+    flex-direction: column;
+}
+.city {
+    font-size: 52px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+aside {
+    width: 40%;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+
+    background: rgba(17, 17, 20, 0.733);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(6.9px);
+    border: 1px solid rgba(64, 63, 63, 0.32);
+}
+
+aside .container {
+    width: 80%;
+    height: 100%;
+    color:#fff
+}
