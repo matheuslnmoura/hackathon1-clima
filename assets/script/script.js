@@ -1,7 +1,7 @@
 let latitude
 let longitude
 let cityName
-const API_KEY = a6c606a3da0d5f480da526e7352ab847
+const API_KEY = 'a6c606a3da0d5f480da526e7352ab847'
 
 const getLocation = () => {
     if (navigator.geolocation){

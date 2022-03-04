@@ -2,7 +2,7 @@ let cidade = 'London';
 const APIKEY = 'a6c606a3da0d5f480da526e7352ab847';
 
 
-let promisse = axios.get(`https:/api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${APIKEY}`);
+let promisse = axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${APIKEY}`);
 promisse.then( (response) => {
     let infoHTML = document.querySelector("body");
     infoHTML.innerHTML +=`
