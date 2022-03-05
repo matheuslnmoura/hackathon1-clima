@@ -75,4 +75,6 @@ function attWeatherHTML(response){
     `;
     console.log(response.data);
     document.querySelector(".imageicon").src = `http://openweathermap.org/img/wn/${(response.data.weather[0].icon)}@2x.png`
+
+    document.querySelector(".city").innerHTML = response.data.name;
 }
